@@ -71,4 +71,9 @@ public class CalculatorTest {
 	    assertEquals(mess, ex.getMessage());
 	  }
 	}
+	
+	@Test
+	public void testNumberLargerThan1000(){
+		assertEquals(2, Calculator.add("1001,2"));
+	}
 }
