@@ -44,9 +44,10 @@ public class CalculatorTest {
 		Calculator.add("-1,2");
 	}
 	
-	@Test
-	public void displayErrorNumbersWithNegNumb() {
-		try
+	@Test 
+	public void displayErrorNumbersWithNegNumb()
+	{
+ 		try
 		{
 			Calculator.add("-1, 1");
 		}
