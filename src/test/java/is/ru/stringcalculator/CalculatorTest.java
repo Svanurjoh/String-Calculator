@@ -38,4 +38,9 @@ public class CalculatorTest {
 	public void testWithNewlineAndComma() {
 		assertEquals(3, Calculator.add("0,1\n2"));
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void checkForNegNumbs() {
+		Calculator.add("-1,2");
+	}
 }
