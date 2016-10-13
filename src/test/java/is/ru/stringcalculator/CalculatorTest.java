@@ -81,4 +81,9 @@ public class CalculatorTest {
 	public void testNumberEquals1000(){
 		assertEquals(1002, Calculator.add("1000,2"));
 	}
+	
+	/*@Test
+	public void testIfComment() {
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}*/
 }

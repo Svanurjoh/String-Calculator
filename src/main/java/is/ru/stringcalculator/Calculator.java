@@ -18,6 +18,11 @@ public class Calculator {
 		{
 			return sum(splitNumbers(text));
 		}
+		/*else if(text.contains(";"))
+		{
+			String str = findDelimeter(text);
+			return sum(splitNumbers(str));
+		}*/
 		else
 		{
 			return 1;
@@ -62,4 +67,24 @@ public class Calculator {
 		}
 		return 1;
     }
+	
+	public static String findDelimeter(String message)
+	{
+		/*String newStr = "";
+		String[] str = message.split("//");
+		for (String s: str) 
+		{
+	         newStr += s;
+	    }
+		newStr = newStr.replace(';', ',');
+		
+		String[] str2 = newStr.split("\n");
+		
+		for (String s: str) 
+		{
+	         newStr += s;
+	    }*/
+		
+		return "1,2";
+	}
 }
