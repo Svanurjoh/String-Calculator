@@ -44,17 +44,31 @@ public class CalculatorTest {
 		Calculator.add("-1,2");
 	}
 	
-	@Test 
-	public void displayErrorNumbersWithNegNumb()
+	@Test
+	public void testWithNegNumb()
 	{
- 		try
-		{
-			Calculator.add("-1, 1");
-		}
-		catch(final IllegalArgumentException exception)
-		{
-			final String mess = "Negatives not allowed: -1";
-			assertEquals(mess, exception.getMessage());
-		}
+	  try
+	  {
+		Calculator.add("-1,2");
+	  }
+	  catch(final IllegalArgumentException ex)
+	  {
+	    final String mess = "Negatives not allowed: [-1]";
+	    assertEquals(mess, ex.getMessage());
+	  }
+	}
+	
+	@Test
+	public void testWithTwoNegNumbs()
+	{
+	  try
+	  {
+		Calculator.add("2,-4,3,-5");
+	  }
+	  catch(final IllegalArgumentException ex)
+	  {
+	    final String mess = "Negatives not allowed: [-4, -5]";
+	    assertEquals(mess, ex.getMessage());
+	  }
 	}
 }
