@@ -43,4 +43,17 @@ public class CalculatorTest {
 	public void checkForNegNumbs() {
 		Calculator.add("-1,2");
 	}
+	
+	@Test
+	public void displayErrorNumbersWithNegNumb() {
+		try
+		{
+			Calculator.add("-1, 1");
+		}
+		catch(final IllegalArgumentException exception)
+		{
+			final String mess = "Negatives not allowed: -1";
+			assertEquals(mess, exception.getMessage());
+		}
+	}
 }
