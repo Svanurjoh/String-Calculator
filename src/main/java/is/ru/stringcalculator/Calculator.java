@@ -5,7 +5,13 @@ import java.util.List;
 
 public class Calculator {
 
-	public static int add(String text){
+	public static int add(String text)
+	{
+		if(checkForNewline(text))
+		{
+			text = text.replace("\n",",");
+		}
+		
 		if(text.equals(""))
 		{
 			return 0;
@@ -14,15 +20,14 @@ public class Calculator {
 		{
 			return checkForExceptions(text);
 		}
+		else if(checkForDelimiter(text))
+		{
+			return findDelimeter(text);
+		}
 		else if(text.contains(",") || text.contains("\n"))
 		{
 			return sum(splitNumbers(text));
 		}
-		/*else if(text.contains(";"))
-		{
-			String str = findDelimeter(text);
-			return sum(splitNumbers(str));
-		}*/
 		else
 		{
 			return 1;
@@ -34,7 +39,7 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
-		return numbers.split("[,\\n]");
+		return numbers.split(",");
 	}
       
     private static int sum(String[] numbers){
@@ -68,23 +73,20 @@ public class Calculator {
 		return 1;
     }
 	
-	public static String findDelimeter(String message)
+	private static boolean checkForDelimiter(String message)
 	{
-		/*String newStr = "";
-		String[] str = message.split("//");
-		for (String s: str) 
-		{
-	         newStr += s;
-	    }
-		newStr = newStr.replace(';', ',');
-		
-		String[] str2 = newStr.split("\n");
-		
-		for (String s: str) 
-		{
-	         newStr += s;
-	    }*/
-		
-		return "1,2";
+        return(message.charAt(0) == '/' && message.charAt(1) == '/');
+    }
+	
+	private static boolean checkForNewline(String message)
+	{
+		return(message.contains("\n"));
+	}
+	
+	public static int findDelimeter(String message)
+	{
+		String delimiter = String.valueOf(message.charAt(2));
+        message = message.substring(4, message.length());
+        return sum(message.split(delimiter));
 	}
 }

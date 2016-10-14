@@ -82,8 +82,8 @@ public class CalculatorTest {
 		assertEquals(1002, Calculator.add("1000,2"));
 	}
 	
-	/*@Test
-	public void testIfComment() {
+	@Test
+	public void testIfDelimeter() {
 		assertEquals(3, Calculator.add("//;\n1;2"));
-	}*/
+	}
 }
