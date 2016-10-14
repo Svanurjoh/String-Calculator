@@ -22,11 +22,13 @@ public class CalculatorTest {
 	@Test
 	public void testTwoNumbers() {
 		assertEquals(3, Calculator.add("1,2"));
+		assertEquals(15, Calculator.add("10,5"));
 	}	
 
 	@Test
     public void testMultipleNumbers(){
     	assertEquals(6, Calculator.add("1,2,3"));
+		assertEquals(9, Calculator.add("3,3,3"));
     }
 	
 	@Test
@@ -75,6 +77,8 @@ public class CalculatorTest {
 	@Test
 	public void testNumberLargerThan1000(){
 		assertEquals(2, Calculator.add("1337,2"));
+		assertEquals(2, Calculator.add("1337,2,1337"));
+		assertEquals(2000, Calculator.add("1000,998,1337,2"));
 	}
 	
 	@Test
@@ -85,5 +89,6 @@ public class CalculatorTest {
 	@Test
 	public void testIfDelimeter() {
 		assertEquals(3, Calculator.add("//;\n1;2"));
+		assertEquals(9, Calculator.add("//&\n7&2"));
 	}
 }
