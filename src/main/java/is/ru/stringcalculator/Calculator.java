@@ -9,7 +9,7 @@ public class Calculator {
 	{
 		if(checkForNewline(text))
 		{
-			text = text.replace("\n",",");
+			text = replaceSymbol(text);
 		}
 		
 		if(text.equals(""))
@@ -88,5 +88,10 @@ public class Calculator {
 		String delimiter = String.valueOf(message.charAt(2));
         message = message.substring(4, message.length());
         return sum(message.split(delimiter));
+	}
+	
+	public static String replaceSymbol(String message)
+	{
+		return message.replace("\n",",");
 	}
 }
