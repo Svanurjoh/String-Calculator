@@ -24,7 +24,7 @@ public class Calculator {
 		{
 			return findDelimeter(text);
 		}
-		else if(text.contains(",") || text.contains("\n"))
+		else if(text.contains(","))
 		{
 			return sum(splitNumbers(text));
 		}
